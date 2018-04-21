@@ -2,6 +2,10 @@
 Todo/pip/*
 .venv
 Todo/
+Todo/db.sqlite3
+Todo/*.pyc
+Todo/Todo/*.pyc
+db.sqlite3
 =======
 # Byte-compiled / optimized / DLL files
 __pycache__/
