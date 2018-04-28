@@ -1,0 +1,12 @@
+{% if latest_work%}
+<ul>
+    {% for work in latest_work %}
+    <li>
+        {% comment %} <a href="/hox/{{ work.user }}/">{{ work.user }}</a> {% endcomment %}
+        <a href="{% url 'detail' %}"> {{ work.user }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No work are available.</p>
+{% endif %}

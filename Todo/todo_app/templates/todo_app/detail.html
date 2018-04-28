@@ -1,0 +1,7 @@
+<h1>{{ work.book }}</h1>
+<ul>
+    <h1>jell</h1>
+    {% for choice in work.discribe_set.all %}
+    <li>{{ choice.choice_text }}</li>
+    {% endfor %}
+</ul>
