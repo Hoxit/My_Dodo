@@ -1,7 +1,6 @@
-<h1>{{ work.book }}</h1>
+<h1>{{ 'List Of Work In Databse'}}</h1>
 <ul>
-    <h1>jell</h1>
-    {% for choice in work.discribe_set.all %}
-    <li>{{ choice.choice_text }}</li>
+    {% for choice in work %}
+    <li>{{ choice }}</li>
     {% endfor %}
 </ul>

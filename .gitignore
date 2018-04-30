@@ -1,7 +1,6 @@
 <<<<<<< HEAD
 Todo/pip/*
 .venv
-Todo/
 Todo/db.sqlite3
 Todo/*.pyc
 Todo/Todo/*.pyc
@@ -109,3 +108,4 @@ ENV/
 # mypy
 .mypy_cache/
 >>>>>>> 0edf5ba190e729f78cbbae0008efe96757ada160
+Todo/db.sqlite3
