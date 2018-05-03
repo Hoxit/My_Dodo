@@ -5,6 +5,7 @@ Todo/db.sqlite3
 Todo/*.pyc
 Todo/Todo/*.pyc
 db.sqlite3
+*.pyc
 =======
 # Byte-compiled / optimized / DLL files
 __pycache__/

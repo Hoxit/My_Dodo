@@ -1,3 +1,5 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'todo_app/style.css' %}">
 <h1>{{ 'List Of Work In Databse'}}</h1>
 <ul>
     {% for choice in work %}
