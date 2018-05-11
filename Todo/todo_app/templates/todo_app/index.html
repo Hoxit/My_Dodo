@@ -4,8 +4,8 @@
 <ul>
     {% for work in latest_work %}
     <li>
-        {% comment %} <a href="/hox/{{ work.user }}/">{{ work.user }}</a> {% endcomment %}
-        <a href="{% url 'detail' %}"> {{ work.user }}</a>
+        <a href="/user_show/{{ work.id }}/">{{ work.id }}</a>
+        {% comment %} <a href="{% url 'detail' %}"> {{ work.user }}</a> {% endcomment %}
     </li>
     {% endfor %}
 </ul>

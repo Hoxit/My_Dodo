@@ -12,9 +12,10 @@ def index(requset):
     return render(requset, 'todo_app/index.html',context)
 
 
-def detail(request):
+def detail(request,item_test):
     latest_work_list = WorkToday.objects.all()
-    context = {'work': latest_work_list}
+    query_list = latest_work_list.values('id','discribe')
+    context = {'work': query_list}
     return render(request, 'todo_app/detail.html', context)
 
 
