@@ -3,11 +3,14 @@
 {% if latest_work%}
 <ul>
     {% for work in latest_work %}
+    <form method="get" novalidate  action="user_show/">
     <li>
-        <a href="/user_show/{{ work.id }}/">{{ work.id }}</a>
+        <input type="submit" name="send_form" value="{{ work.discribe }}" >
         {% comment %} <a href="{% url 'detail' %}"> {{ work.user }}</a> {% endcomment %}
     </li>
+    </table>
     {% endfor %}
+    </form>
 </ul>
 {% else %}
 <p>No work are available.</p>

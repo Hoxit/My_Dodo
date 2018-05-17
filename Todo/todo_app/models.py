@@ -39,8 +39,7 @@ class InputForm(forms.Form):
         Short_discribre = cleaned_data.get('Short_discribe')
         # email = cleaned_data.get('email')
         # pub_date = cleaned_data.get('Date published')
-        message = cleaned_data.get('message')
-        if not Short_discribre and not message:
+        if not Short_discribre:
             raise forms.ValidationError('You have to write something!')
 
     def __unicode__(self):

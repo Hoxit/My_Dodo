@@ -12,10 +12,11 @@ def index(requset):
     return render(requset, 'todo_app/index.html',context)
 
 
-def detail(request,item_test):
+def detail(request):
     latest_work_list = WorkToday.objects.all()
     query_list = latest_work_list.values('id','discribe')
-    context = {'work': query_list}
+    get_data = request.GET['send_form']
+    context = {'work': query_list, 'message': get_data}
     return render(request, 'todo_app/detail.html', context)
 
 
@@ -27,3 +28,6 @@ def form(request):
     else:
         form = InputForm()
     return render(request, 'todo_app/form.html', {'form': form})
+
+def search_form(request):
+    return render(request, 'todo_app/search_form.html')
