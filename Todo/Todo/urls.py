@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from todo_app.api import WorkTodayResource
+work_res = WorkTodayResource()
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('todo_app.urls')),
+    url(r'^api/', include(work_res.urls)),
 ]
