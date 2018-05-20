@@ -1,17 +1,60 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'todo_app/css/style.css' %}">
+<div id="list_my_work">
 {% if latest_work%}
-<ul>
+    <ul >
     {% for work in latest_work %}
-    <form method="get" novalidate  action="user_show/">
-    <li>
+    <form method="get" novalidate  action="user_show/"  >
+    <li >
         <input type="submit" name="send_form" value="{{ work.discribe }}" >
+
+        {% comment %} <label class="container"> Doit
+         <input type="checkbox" name="checkbox" value="doit">
+        </label>
+        <label class="container"> Edit
+         <input type="checkbox" name="checkbox" value="edit">
+        </label>
+        <label class="container"> Delete
+         <input type="checkbox" name="checkbox" value="edit">
+        </label>
+        <label class="container"> Nothing
+         <input type="checkbox" name="checkbox" checked="checked" value="nothing">
+        </label> {% endcomment %}
+        
         {% comment %} <a href="{% url 'detail' %}"> {{ work.user }}</a> {% endcomment %}
     </li>
     </table>
     {% endfor %}
     </form>
-</ul>
-{% else %}
-<p>No work are available.</p>
+    </ul>
+    {% else %}
+    <p>No work are available.</p>
 {% endif %}
+</div>
+<label name="list_works">
+    <label name="list_works">
+    <button type="submit" class="btn btn-primary" name="works_doit" onclick="myFunction()">works_doit</button>
+    <label>
+    <label name="list_works">
+    <button type="submit" class="btn btn-primary" name="works_notcomplet">works_notcomplet</button>
+    <label>
+    <label name="list_works">
+    <button type="submit" class="btn btn-primary" name="works_new">works_new</button>
+    <label>
+</lable>
+
+
+
+
+<script>
+function myFunction() {
+
+    var x = document.getElementById('list_my_work');
+    if (x.style.visibility === 'hidden') {
+        x.style.visibility = 'visible';
+    } else {
+        x.style.visibility = 'hidden';
+    }
+
+}
+</script>

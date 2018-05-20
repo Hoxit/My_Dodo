@@ -15,11 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.views.generic.base import TemplateView
 from todo_app.api import WorkTodayResource
+
 work_res = WorkTodayResource()
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('todo_app.urls')),
     url(r'^api/', include(work_res.urls)),
+    url('accounts/', include('django.contrib.auth.urls')),
+    url(r'^home/', TemplateView.as_view(template_name='home.html'), name='home'),
 ]

@@ -1,9 +1,28 @@
 {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% static 'todo_app/css/style.css' %}">
 <h1>{{ 'List Of Work In Databse'}}</h1>
-<ul>
+<ul >
+
     {% for choice in work %}
-    <li>{{ choice.discribe }}</li>
+    <li >{{ choice }}</li>
     {% endfor %}
-    <li>{{ message }}</li>
 </ul>
+<ul id="work">
+    <li>{{ message }}</li>
+    <li>{{ checkbox }}</li>
+</ul>
+
+<button type="button" onclick="myFunction()">Hide content of p</button>
+
+<script>
+function myFunction() {
+
+    var x = document.getElementById('work');
+    if (x.style.visibility === 'hidden') {
+        x.style.visibility = 'visible';
+    } else {
+        x.style.visibility = 'hidden';
+    }
+
+}
+</script>
