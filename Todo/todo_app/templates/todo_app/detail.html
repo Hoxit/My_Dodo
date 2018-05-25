@@ -1,8 +1,10 @@
+{% extends 'base.html' %}
 {% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% static 'todo_app/css/style.css' %}">
+
+{% block content %}
+    
 <h1>{{ 'List Of Work In Databse'}}</h1>
 <ul >
-
     {% for choice in work %}
     <li >{{ choice }}</li>
     {% endfor %}
@@ -13,7 +15,6 @@
 </ul>
 
 <button type="button" onclick="myFunction()">Hide content of p</button>
-
 <script>
 function myFunction() {
 
@@ -26,3 +27,4 @@ function myFunction() {
 
 }
 </script>
+{% endblock content %}

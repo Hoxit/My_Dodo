@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'todo_app',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -119,5 +120,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+OTHER_URL = 'Todo/todo_app'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL ='home'
+# BOOTSTRAP4 = {
+#     'jquery_url': 'todo_app/bootstrap/js/jquery.min.js',
+#     'css_url': 'todo_app/bootstrap/css/bootstrap.min.css',
+#     'javascript_url': 'todo_app/bootstrap/js/bootstrap.min.js',
+# }
