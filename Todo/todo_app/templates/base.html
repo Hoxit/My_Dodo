@@ -17,12 +17,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <main>
+  <main >
       <div class="sidenav">
          <ul class="nav-tab">
-        <a href="{% url 'index' %}" >درباره ما</a>
-        <a href="{% url 'login' %}">وارد شدن</a>
-        <a href="{% url 'logout' %}">خروج</a>
+        <a href="#" >درباره ما</a>
+        <a href="#">وارد شدن</a>
+        <a href="#">خروج</a>
         <ul>
       </div>
     {% comment %} {% bootstrap_button 'hossein' button_class='btn-warning' button_type='link' size='xs' %} {% endcomment %}
@@ -35,9 +35,11 @@
            </ul>      
       </div>
     </nav> {% endcomment %}
+    <div class="blockcontent">
     {% block content %}
 
     {% endblock %}
+    </div>
   </main>
 </body>
 </html>

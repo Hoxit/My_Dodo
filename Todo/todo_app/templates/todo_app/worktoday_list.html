@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    
+    
+<h1>My Work</h1>
+
+<table border="1">
+<thead>
+    <tr>
+    <th>View</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+    {% for mywork in object_list %}
+    <tr>
+    <td><a href="{% url 'todo_app:work_view' mywork.id %}">{{mywork.discribe}}</a></td>
+    <td><a href="{% url 'todo_app:work_edit' mywork.id %}">edit</a></td>
+    <td><a href="{% url 'todo_app:work_delete' mywork.id %}">delete</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+<a href="{% url 'todo_app:work_new' %}">New</a>
+{% endblock content %}

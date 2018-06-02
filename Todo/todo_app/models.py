@@ -1,7 +1,11 @@
 from __future__ import unicode_literals
 from django.db import models
+from django.urls import reverse
 from django.contrib.auth.models import User
+
 # Create your models here.
+
+
 
 class Token(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -16,7 +20,7 @@ class WorkToday(models.Model):
     pub_date = models.DateTimeField('Date published')
     Short_discribre = models.CharField(max_length=40)
     user = models.ForeignKey(User, related_name='User', null=True)
-
     def __unicode__(self):
         return "{} ".format(self.Short_discribre)
-
+    def get_absolute_url(self):
+        return reverse('todo_app:work_list', kwargs={'pk': self.slug})

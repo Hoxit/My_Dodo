@@ -5,9 +5,22 @@
     {% if latest_work%}
         <ul >
         {% for work in latest_work %}
-        <form method="get" novalidate  action="user_show/"  >
-        <li >
-            <input type="submit" name="send_form" value="{{ work.discribe }}" >
+        {% comment %} <form   method="get" novalida  action="user_show/"  > {% endcomment %}
+        <section class="container">
+            <div class="col-md-4 btn btn-primary">
+
+            {% comment %} <input claas="btn btn-primary" type="submit" name="send_form" value="{{ work.discribe }}" > {% endcomment %}
+
+            {% comment %} <a href="{% url 'detail' %}"> {{ work.discribe }}</a> {% endcomment %}
+
+
+            <h2><a href="{{ work.get_absolute_url }}"> {{ work.discribe}}</a></h2>
+
+            
+            {% comment %} <button type="submit" name="send_form" >    {{ work.discribe }}   </button> {% endcomment %}
+            </div>
+        
+
 
             {% comment %} <label class="container"> Doit
             <input type="checkbox" name="checkbox" value="doit">
@@ -21,10 +34,9 @@
             <label class="container"> Nothing
             <input type="checkbox" name="checkbox" checked="checked" value="nothing">
             </label> {% endcomment %}
-            
-            {% comment %} <a href="{% url 'detail' %}"> {{ work.user }}</a> {% endcomment %}
-        </li>
-        </table>
+
+        </section>
+
         {% endfor %}
         </form>
         </ul>
