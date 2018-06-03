@@ -1,5 +1,21 @@
-<h1>Work Edit</h1>
-<form method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit" />
+{% extends 'base.html' %}
+{% load staticfiles %} {% load bootstrap4 %}
+<link rel="stylesheet" href="{% static 'todo_app/bootstrap/css/bootstrap.min.css' %}" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'todo_app/bootstrap/css/my_create.css' %}" crossorigin="anonymous">
+<script src="{% static 'todo_app/bootstrap/js/bootstrap.min.js' %}" crossorigin="anonymous"></script>
+
+{% block content %}
+  
+<div class="page-header"> 
+    <h1> ویرایش</h1>
+</div>
+
+<form class="form-horizontal" method="post">{% csrf_token %}
+{% bootstrap_form form  %}
+    {% comment %} {{ form.as_p }} {% endcomment %}
+  
+    {% comment %} <input type="submit" value="Submit" /> {% endcomment %}
+{% bootstrap_button "Save" button_type="submit" button_class="btn-primary"  value="Submit"%}
 </form>
+<a href="{% url 'todo_app:work_list' %}" class="btn btn-info" role="button"> بازگشت</a>
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% load staticfiles %}
+{% load bootstrap4 %}
+<link rel="stylesheet" href="{% static 'todo_app/bootstrap/css/bootstrap.min.css' %}" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'todo_app/bootstrap/css/my_create.css' %}" crossorigin="anonymous">
+<script src="{% static 'todo_app/bootstrap/js/bootstrap.min.js' %}" crossorigin="anonymous"></script>
+<div class="pagination">
+    <span class="step-links">
+
+        {% if page.has_previous %}
+        <a href="?page={{ page.previous_page_number }}">Previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page.number }} of {{ page.paginator.num_pages }}.
+        </span>
+
+        {% if page.has_next %}
+        <a href="?page={{ page.next_page_number }}">Next</a>
+        {% endif %}
+    </span>
+</div>

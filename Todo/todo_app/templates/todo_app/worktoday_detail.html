@@ -1,3 +1,17 @@
-<h1>Work Details</h1>
-<h2>Name_todo: {{object.discribe}}</h2>
-discribe: {{ object.Short_discribre }}
+{% extends 'base.html' %}
+{% load staticfiles %} {% load bootstrap4 %}
+<link rel="stylesheet" href="{% static 'todo_app/bootstrap/css/bootstrap.min.css' %}" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'todo_app/bootstrap/css/my_create.css' %}" crossorigin="anonymous">
+<script src="{% static 'todo_app/bootstrap/js/bootstrap.min.js' %}" crossorigin="anonymous"></script>
+
+
+{% block content %}
+<h1>جزییات کار های من </h1>
+
+<h2>عنوان : {{ object.Short_discribre }} </h2>
+
+    <h2>توضیحات: {{object.discribe}}</h2>
+
+<p class="date">اضافه شده  {{object.user}} توسط {{object.pub_date}} در روز </p>
+<a href="{% url 'todo_app:work_list' %}" class="btn btn-info" role="button"> بازگشت</a>
+{% endblock content %}

@@ -1,14 +1,18 @@
 {% extends 'base.html' %}
-{% load staticfiles %}
+{% load staticfiles %} {% load bootstrap4 %}
+<link rel="stylesheet" href="{% static 'todo_app/bootstrap/css/bootstrap.min.css' %}" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'todo_app/bootstrap/css/my_create.css' %}" crossorigin="anonymous">
+<script src="{% static 'todo_app/bootstrap/js/bootstrap.min.js' %}" crossorigin="anonymous"></script>
 
 {% block title %}Home{% endblock %}
 
 {% block content %}
+
 {% if user.is_authenticated %}
-  Hi {{ user.username }}!
+  سلام {{ user.username }}!
   <p><a href="{% url 'logout' %}">logout</a></p>
 {% else %}
-  <p>You are not logged in</p>
+  <p>شما وارد نشدید</p>
   <a href="{% url 'login' %}">login</a>
 {% endif %}
 {% endblock %}

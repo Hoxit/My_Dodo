@@ -32,6 +32,8 @@ from django import forms
 
 class WorkList(ListView):
     model = WorkToday
+    paginate_by = 2
+
 
 class WorkView(DetailView):
     model = WorkToday
@@ -46,7 +48,6 @@ class WorkCreate(CreateView):
 class WorkUpdate(UpdateView):
     model = WorkToday
     fields = ['discribe', 'pub_date', 'Short_discribre']
-
     success_url = reverse_lazy('todo_app:work_list')
 
 
